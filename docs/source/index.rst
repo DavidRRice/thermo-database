@@ -29,28 +29,28 @@ search, manipulate, plot, and export the database contents.
    :maxdepth: 2
    :caption: User guide
 
-   user_guide/database_structure
-   user_guide/loading
-   user_guide/searching
-   user_guide/plotting
-   user_guide/exporting
+   .. user_guide/database_structure
+   .. user_guide/loading
+   .. user_guide/searching
+   .. user_guide/plotting
+   .. user_guide/exporting
 
 .. toctree::
    :maxdepth: 2
    :caption: Contributor guide
 
-   contributor_guide/data_conventions
-   contributor_guide/adding_data
-   contributor_guide/adding_eos
-   contributor_guide/validation
+   .. contributor_guide/data_conventions
+   .. contributor_guide/adding_data
+   .. contributor_guide/adding_eos
+   .. contributor_guide/validation
 
 .. toctree::
    :maxdepth: 2
    :caption: Developer guide
 
-   developer_guide/architecture
-   developer_guide/testing
-   developer_guide/design_decisions
+   .. developer_guide/architecture
+   .. developer_guide/testing
+   .. developer_guide/design_decisions
 
 .. toctree::
    :maxdepth: 2
