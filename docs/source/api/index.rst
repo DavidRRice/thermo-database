@@ -6,6 +6,5 @@ defined in the PEARL backend.
 
 .. autosummary::
    :toctree: generated
-   :recursive:
 
-   modules
+   modules.EOSDatabase
