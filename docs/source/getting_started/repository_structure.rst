@@ -87,4 +87,5 @@ Further Reading
 The following pages describe the repository in more detail:
 
 * :doc:`dependencies`
+
 .. * :doc:`../developer_guide/architecture`
