@@ -19,7 +19,7 @@ We also welcome new collaborators.
 
 # How to use this database
 
-1. You can navigate the `data` folder to download data from sources of interest. 
+1. You can navigate the `data` folder to manually navigate through the contents of the database. 
 2. You can use the `EOSdatabase_demo_v*` notebooks to see how to load and manipulate the database.
 
 # How to add more data
@@ -27,11 +27,8 @@ We also welcome new collaborators.
 To add more data, we recommend using the following workflow.
 
 ## Recommended workflow
-### Clone
-Start by cloning this repository on your machine:
-```
-git clone https://github.com/an0wen/thermo-database.git
-```
+### Fork
+Start by forking this repository to make a copy in your github account.
 
 ### Template
 In the `data` folder, create a new folder for every source you want to add. We recommend use `data/_template` as a template.
@@ -48,7 +45,7 @@ In addition to thermodynamic data, contributors are heavily encouraged to provid
 ### Load test
 Once all the new content has been created, test your contribution by running:
 ```
-python modules/test_load.py
+python tests/test_load.py
 ```
 
 This script verifies that:
@@ -76,7 +73,7 @@ All tests passed. Please use the 'EOSdatabase_demo_*.' notebook to verify that y
 As indicated in the last line, this script merely verifies that all modules are imported and all files are loaded. It does not guarantee that various parameters and variables have actually been implemented correctly.
 
 ### Pull Request
-If the new content passed all the tests, use git add/commit/push to submit your implementations. This will create a pull request (PR) that the collaborators will verify.
+If the new content passed all the tests, use git add/commit/push to submit your implementations. Navigate to the forked repository, and make a pull request (PR). The core contributors will verify the PR and validate it or leave comments to resolve.
 
 # Other forms of contribution
 
