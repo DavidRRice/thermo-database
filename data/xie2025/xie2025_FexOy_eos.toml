@@ -1,4 +1,4 @@
-unique_id = "xie2025"  # Unique identifier as defined in the *_source.toml, e.g. "miozzi2020"
+unique_id = "xie2025"
 
 [science]
 material = "Iron Oxide" # Combined EOS for Fe and O. Data includes pure Fe end member but only goes up to 27.77% by moles (9.9% by weight) O.
