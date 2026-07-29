@@ -1,0 +1,6 @@
+sphinx
+sphinx-rtd-theme
+pandas
+matplotlib
+numpy
+tabulate

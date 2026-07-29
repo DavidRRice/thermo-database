@@ -4,6 +4,9 @@ from pathlib import Path
 import pandas as pd
 import tomllib
 
+'''
+Module containing all loading routines.
+'''
 
 def load_single_thermo(path_dat: Path) -> pd.DataFrame:
     """
@@ -120,7 +123,7 @@ def load_single_thermo(path_dat: Path) -> pd.DataFrame:
 
 
 
-def scan_thermo_tables(dir_data, verbose=0) -> pd.DataFrame:
+def load_thermo(dir_data, verbose=0) -> pd.DataFrame:
     """
     Scan all folders recursively and merge thermo tables.
     """
@@ -149,7 +152,7 @@ def scan_thermo_tables(dir_data, verbose=0) -> pd.DataFrame:
 
     return pd.concat(dfs, ignore_index=True)
 
-def scan_eos(dir_data, verbose=0):
+def load_eos(dir_data, verbose=0):
     """
     Scan all folders recursively and merge information about eos.
     """
@@ -202,7 +205,7 @@ def scan_eos(dir_data, verbose=0):
     return pd.DataFrame(rows)
 
 
-def scan_sources(dir_data, verbose=0):
+def load_sources(dir_data, verbose=0):
     """
     Scan all folders recursively and merge information about sources.
     """
