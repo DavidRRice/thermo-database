@@ -7,6 +7,6 @@ phase = "liquid"
 crystal = "na"
 method = "AIMD"
 
-[[other]]
+[other]
 notes = "Combined EOS for Fe and O. Data includes pure Fe end member but only goes up to 27.77% by moles (9.9% by weight) O."
 usedin = ["Skinner 2026"]

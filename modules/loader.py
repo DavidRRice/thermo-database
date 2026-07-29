@@ -51,7 +51,10 @@ def load_single_thermo(path_dat: Path) -> pd.DataFrame:
 
             column_name = f"{section_name}_{key}"
 
-            df[column_name] = value
+            if isinstance(value, list):
+                df[column_name] = [value] * len(df)
+            else:
+                df[column_name] = value
 
             # useful provenance fields
             # df["table_path"] = str(path_dat)
@@ -144,6 +147,9 @@ def load_thermo(dir_data, verbose=0) -> pd.DataFrame:
             if verbose==1: print(f"Loaded thermo-data file: {path_dat}")
 
         except Exception as e:
+            df = load_single_thermo(path_dat)
+            print(path_dat)
+            print(df)
             print(f"Failed loading {path_dat}")
             print(e)
 
@@ -188,7 +194,10 @@ def load_eos(dir_data, verbose=0):
                 continue
 
             for key, value in content.items():
-                row[f"{section}_{key}"] = value
+
+                column_name = f"{section}_{key}"
+
+                row[column_name] = value
 
         row["source_file"] = (path_dat.name)
 
