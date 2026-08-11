@@ -1,4 +1,12 @@
 unique_id = "attia2026"
 citation = "Attia et al. (2026)"
 year = 2026
+doi = "https://doi.org/10.48550/arXiv.2605.03741"
+
+[zenodo]
 doi = "https://doi.org/10.5281/zenodo.19000315"
+link = "https://zenodo.org/records/20084812"
+
+[github]
+link = "https://github.com/maraattia/PALEOS"
+author = "maraattia"
