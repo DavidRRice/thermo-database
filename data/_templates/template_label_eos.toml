@@ -31,3 +31,6 @@ max_rho = 12e3  # Upper boundary in pressure of EOS validity range, e.g. 12e3 kg
 # uncertainties if available. The specific parameters will depend on the type of EOS and thermal model used.
 # Uncertainties should be prefixed with 'd', e.g. dV_0 for the uncertainty in V_0.
 # Also include the temperature parameters if a thermal model is used
+
+[other]
+notes = "This EOS is available at..." # Additional notes related to this specific EOS that may not appear in the publication, or that must be emphasized when using this EOS. This field should not be used to describe the EOS, since this should already be done in the paper where it is published.

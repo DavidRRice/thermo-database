@@ -29,4 +29,4 @@ max_rho = 0  # Upper boundary in pressure of EOS validity range, e.g. 12e3 kg/m^
 # Also include the temperature parameters if a thermal model is used
 
 [other]
-notes = "A typo in the Mazevet et al. 2019 (unique ID: mazevet2019) code was propagated to this table. This typo resulted in incorrect values of specific entropy (but not their derivatives). A consequence of this typo was that an adiabat would be computed correctly, but the value of specific entropy along the adiabat would be incorrect and non-constant. We recommend using a release that does not include this typo."
+notes = "A typo in the Mazevet et al. 2019 (unique ID: mazevet2019) code was propagated to this table. We recommend using an EOS that does not include this typo."

@@ -27,3 +27,6 @@ max_rho = 50e3  # Upper boundary in pressure of EOS validity range, e.g. 12e3 kg
 # uncertainties if available. The specific parameters will depend on the type of EOS and thermal model used.
 # Uncertainties should be prefixed with 'd', e.g. dV_0 for the uncertainty in V_0.
 # Also include the temperature parameters if a thermal model is used
+
+[other]
+notes = "The fortran implementation of this EOS can be downloaded on http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/621/A128 . However, this release contained a typo in the code that resulted in incorrect values of specific entropy (but not their derivatives). A consequence of this typo was that an adiabat would be computed correctly, but the value of specific entropy along the adiabat would be incorrect and non-constant. A corrected version of this code can be found here: https://www.ioffe.ru/astro/H2O/index.html ."
