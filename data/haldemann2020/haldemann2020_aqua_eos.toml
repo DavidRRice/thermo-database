@@ -1,0 +1,32 @@
+unique_id = "haldemann2020"
+
+[science]
+material = "water"  # Material name, e.g. "iron"
+formula = "H2O"  # Chemical formula, e.g. "Fe"
+phase = ["ice-Ih", "ice-II", "ice-III", "ice-V", "ice-VI", "ice-VII", "ice-X", "liquid", "gas", "supercritical", "superionic", "plasma"]  # Phase, e.g. "solid"
+crystal = ""  # Crystal structure, e.g. "hcp"
+method = "collection"  # Experimental or computational method, e.g. "DAC"
+
+[description]
+type = "tabulated" # Type of EOS, e.g. "fit" or "tabulated"
+cold_type = ""  # Type of isothermal EoS, e.g. "bm3" for Birch-Murnaghan 3rd order
+thermal_exist = false  # True if the EOS includes a thermal component, false if it is purely isothermal
+thermal_type = ""  # Type of thermal model, e.g. "debye" for Mie-Gruneisen-Debye
+reference_temperature = 300  # Reference temperature for the cold curve, e.g. 300 K
+
+[validity]
+min_p = 0.1  # Lower boundary in pressure of EOS validity range, e.g. 10e9 = 10 GPa
+max_p = 400e12  # Upper boundary in pressure of EOS validity range, e.g. 150e9 = 150 GPa
+min_t = 150  # Lower boundary in temperature of EOS validity range, e.g. 300 K
+max_t = 10e5  # Upper boundary in pressure of EOS validity range, e.g. 4000 K
+min_rho =   # Lower boundary in density of EOS validity range, e.g. 8e3 kg/m^3
+max_rho =   # Upper boundary in pressure of EOS validity range, e.g. 12e3 kg/m^3
+
+[parameters]
+# This section should be filled with the parameters of the EOS fit, e.g. V_0, K_0, K_0_prime, etc., along with their
+# uncertainties if available. The specific parameters will depend on the type of EOS and thermal model used.
+# Uncertainties should be prefixed with 'd', e.g. dV_0 for the uncertainty in V_0.
+# Also include the temperature parameters if a thermal model is used
+
+[other]
+notes = "A typo in the Mazevet et al. 2019 (unique ID: mazevet2019) code was propagated to this table. This typo resulted in incorrect values of specific entropy (but not their derivatives). A consequence of this typo was that an adiabat would be computed correctly, but the value of specific entropy along the adiabat would be incorrect and non-constant. We recommend using a release that does not include this typo."
