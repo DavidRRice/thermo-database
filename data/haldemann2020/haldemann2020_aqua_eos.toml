@@ -19,8 +19,8 @@ min_p = 0.1  # Lower boundary in pressure of EOS validity range, e.g. 10e9 = 10 
 max_p = 400e12  # Upper boundary in pressure of EOS validity range, e.g. 150e9 = 150 GPa
 min_t = 150  # Lower boundary in temperature of EOS validity range, e.g. 300 K
 max_t = 10e5  # Upper boundary in pressure of EOS validity range, e.g. 4000 K
-min_rho =   # Lower boundary in density of EOS validity range, e.g. 8e3 kg/m^3
-max_rho =   # Upper boundary in pressure of EOS validity range, e.g. 12e3 kg/m^3
+min_rho = 0  # Lower boundary in density of EOS validity range, e.g. 8e3 kg/m^3
+max_rho = 0  # Upper boundary in pressure of EOS validity range, e.g. 12e3 kg/m^3
 
 [parameters]
 # This section should be filled with the parameters of the EOS fit, e.g. V_0, K_0, K_0_prime, etc., along with their
