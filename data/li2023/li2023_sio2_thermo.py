@@ -168,16 +168,15 @@ def convert_tvpf(workbook: Path, output_dir: Path) -> dict[str, int]:
         density_si = M_SIO2 / volume_si
         grouped[PHASE_LABELS[phase]].append([
             significant(density_si, 6),
-            scientific(volume_si),
             scientific(pressure_si),
             plain(temperature),
+            scientific(volume_si),
             scientific(free_si),
-            phase,
         ])
     for label, data in grouped.items():
         write_tsv(
             output_dir / f"li2023_{label}_thermo.dat",
-            ["rho", "V", "P", "T", "f", "phase"],
+            ["rho[kg/m^3]", "P[Pa]", "T[K]", "V[m^3/mol]", "f[J/mol]"],
             data,
         )
     return {label: len(data) for label, data in grouped.items()}

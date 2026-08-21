@@ -24,6 +24,7 @@ row_count = 20
 missing_value = "NaN"
 row_order = "preserved from source"
 data_status = "reported T, V, P, F; converted to SI; rho derived"
+column_order = ["rho[kg/m^3]", "P[Pa]", "T[K]", "V[m^3/mol]", "f[J/mol]"]
 
 [validity]
 range_type = "numerical extrema of the phase-specific supplementary TVPF rows; also used as the conservative EOS calibration-data range"
@@ -38,20 +39,15 @@ max_rho = 6.01252e+3
 
 [[columns]]
 name = "rho"
+header = "rho[kg/m^3]"
 unit = "kg/m^3"
 status = "derived"
 description = "Density calculated as rho = M_SiO2 / V."
 provenance = "M_SiO2 = 0.0600843 kg/mol adopted from NIST Chemistry WebBook; V is the converted supplementary molar volume."
 
 [[columns]]
-name = "V"
-unit = "m^3/mol"
-status = "converted"
-original_unit = "cm^3/mol"
-conversion = "V_SI = V_source * 1e-6"
-
-[[columns]]
 name = "P"
+header = "P[Pa]"
 unit = "Pa"
 status = "converted"
 original_unit = "GPa"
@@ -59,22 +55,26 @@ conversion = "P_SI = P_source * 1e9"
 
 [[columns]]
 name = "T"
+header = "T[K]"
 unit = "K"
 status = "reported"
 
 [[columns]]
+name = "V"
+header = "V[m^3/mol]"
+unit = "m^3/mol"
+status = "converted"
+original_unit = "cm^3/mol"
+conversion = "V_SI = V_source * 1e-6"
+
+[[columns]]
 name = "f"
+header = "f[J/mol]"
 unit = "J/mol"
 status = "converted"
 original_name = "F"
 original_unit = "kJ/mol"
 conversion = "f_SI = F_source * 1e3"
 description = "Total Helmholtz free energy reported in the TVPF sheet."
-
-[[columns]]
-name = "phase"
-unit = "text"
-status = "reported"
-
 [other]
-notes = "Density is not reported by Li et al. and is explicitly derived. No source cells are blank in the curated rows. The supplementary pressure and free-energy values are computed values and are retained to 15 significant digits to suppress spreadsheet binary-storage artifacts without adding precision."
+notes = "Density is not reported by Li et al. and is explicitly derived. No source cells are blank in the curated rows. Phase is recorded in the filename and metadata and is intentionally omitted from the standardized .dat table. The supplementary pressure and free-energy values are computed values and are retained to 15 significant digits to suppress spreadsheet binary-storage artifacts without adding precision."
