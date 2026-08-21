@@ -21,6 +21,8 @@ min_t = 300.5
 max_t = 451.2
 min_v = 9.4963e-6
 max_v = 1.1509e-5
+min_rho = 1565.3
+max_rho = 1897.1
 range_type = "curator-calculated extrema of the 92 ice VII rows in Table I; this is the source-data/calibration range, not an author-recommended extrapolation range"
 
 [provenance]
@@ -30,6 +32,7 @@ standardized_file = "bezacier2014_icevii_thermo.dat"
 conversion_script = "bezacier2014_icevii_thermo.py"
 transcription_status = "manually transcribed from the PDF text layer and checked against the rendered Table I"
 row_count = 92
+column_order = ["rho[kg/m^3]", "drho[kg/m^3]", "P[Pa]", "dP[Pa]", "T[K]", "dT[K]", "V[m^3/mol]", "dV[m^3/mol]"]
 
 [conversion]
 unit_cell_Z = 2
@@ -38,23 +41,31 @@ unit_cell_Z_note = "The paper reports unit-cell volumes and the phase space grou
 avogadro_constant = 6.02214076e23
 avogadro_constant_status = "exact SI"
 molar_volume_equation = "V_m = V_cell[A^3] * 1e-30 * N_A / Z"
+molar_mass = 18.01528e-3
+molar_mass_unit = "kg/mol"
+molar_mass_status = "adopted for deterministic density conversion"
+density_equation = "rho = M_H2O / V_m"
+density_uncertainty_equation = "drho = rho * dV / V; propagated from reported volume uncertainty only"
 
 [[columns]]
-name = "V"
-unit = "m^3/mol"
-status = "converted"
-source_column = "V (A^3)"
-description = "Molar volume converted from reported unit-cell volume."
+name = "rho"
+header = "rho[kg/m^3]"
+unit = "kg/m^3"
+status = "derived"
+description = "Density calculated from the standardized molar volume."
+provenance = "rho = M_H2O / V using adopted M_H2O = 18.01528e-3 kg/mol."
 
 [[columns]]
-name = "dV"
-unit = "m^3/mol"
-status = "converted"
-source_column = "parenthetical uncertainty on V (A^3)"
-description = "Uncertainty converted by the same exact scale factor as V."
+name = "drho"
+header = "drho[kg/m^3]"
+unit = "kg/m^3"
+status = "derived uncertainty"
+description = "First-order density uncertainty propagated from the reported unit-cell-volume uncertainty only."
+provenance = "drho = rho * dV / V; molar-mass uncertainty is not included."
 
 [[columns]]
 name = "P"
+header = "P[Pa]"
 unit = "Pa"
 status = "converted"
 source_column = "P (GPa)"
@@ -62,6 +73,7 @@ conversion = "P[Pa] = P[GPa] * 1e9"
 
 [[columns]]
 name = "dP"
+header = "dP[Pa]"
 unit = "Pa"
 status = "converted"
 source_column = "parenthetical uncertainty on P (GPa)"
@@ -69,16 +81,33 @@ conversion = "dP[Pa] = dP[GPa] * 1e9"
 
 [[columns]]
 name = "T"
+header = "T[K]"
 unit = "K"
 status = "reported"
 source_column = "T (K)"
 
 [[columns]]
 name = "dT"
+header = "dT[K]"
 unit = "K"
 status = "reported"
 source_location = "Table I caption"
 description = "The table caption gives a common temperature error of +/-0.4 K for all rows."
 
+[[columns]]
+name = "V"
+header = "V[m^3/mol]"
+unit = "m^3/mol"
+status = "converted"
+source_column = "V (A^3)"
+description = "Molar volume converted from reported unit-cell volume."
+
+[[columns]]
+name = "dV"
+header = "dV[m^3/mol]"
+unit = "m^3/mol"
+status = "converted"
+source_column = "parenthetical uncertainty on V (A^3)"
+description = "Uncertainty converted by the same exact scale factor as V."
 [other]
-notes = "The reported lattice parameters are preserved in the raw transcription but are not duplicated in the standardized thermodynamic table. No density was added because the source does not report density and a molar-mass convention is not required to retain the P-V-T data."
+notes = "The reported lattice parameters are preserved in the raw transcription but are not duplicated in the standardized thermodynamic table. Density and density uncertainty are derived for PEARL standardization; the source itself reports unit-cell volume rather than density."
